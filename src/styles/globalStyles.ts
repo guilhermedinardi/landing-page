@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background-color: #081B1F;
+    background-color: var(--primary-color);
   }
   html{
 
