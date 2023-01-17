@@ -12,16 +12,16 @@ export const HeaderComponent = styled.header`
 `
 
 export const LogoComponent = styled.img`
-  width: 20vw;
-  height: 10vh;
+  width: auto;
+  height: 8vh;
   margin-top: 1.5em;
-  margin-left: 5em;
+  margin-left: 15em;
 `
 
 const Header = () => {
   return (
     <HeaderComponent>
-      <a href="/">
+      <a href="/" target="_blank" rel="noreferrer">
         <LogoComponent src={logo} alt='logo' />
       </a>
     </HeaderComponent>

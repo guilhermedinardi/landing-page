@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
+import NeueMachina from '../assets/fonts/NeueMachina-Regular.otf'
 
 export const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: "NeueMachina";
+    src: local("NeueMachina"), url(${NeueMachina});
+  }
   :root{
     --primary-color: #081B1F;
     --second-color: #E50F45;
@@ -10,8 +15,11 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: NeueMachina;
     background-color: var(--primary-color);
+  }
+  a {
+    text-decoration: none;
   }
   html{
 
@@ -26,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
     --webkit-font-smoothing: antialiased;
   }
   body, input, textarea, button{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-family: NeueMachina;
+    font-weight: 300;
   }
 `
