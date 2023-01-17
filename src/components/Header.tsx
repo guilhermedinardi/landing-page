@@ -13,7 +13,7 @@ export const HeaderComponent = styled.header`
 
 export const LogoComponent = styled.img`
   width: auto;
-  height: 8vh;
+  height: 4vh;
   margin-top: 1.5em;
   margin-left: 15em;
 `

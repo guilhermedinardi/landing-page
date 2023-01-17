@@ -32,6 +32,7 @@ export const Paragraph = styled.p`
   font-size: 20px;
   line-height: 33px;
   font-weight: 300;
+  padding-top: 1em;
 `
 
 

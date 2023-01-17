@@ -7,7 +7,7 @@ export const Box = styled.div`
   height: 24.56em;
   border-radius: 55px;
   opacity: 0.24;
-  margin-right: 25em;
+  margin-right: 18em;
   background: transparent linear-gradient(180deg, #FFFFFF 0%, #808080 100%) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, var(--text-color) 0%, #808080 100%) 0% 0% no-repeat padding-box;
 
