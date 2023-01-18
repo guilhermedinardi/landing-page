@@ -16,7 +16,6 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: NeueMachina;
-    background-color: var(--primary-color);
   }
   a {
     text-decoration: none;

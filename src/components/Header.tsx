@@ -1,11 +1,11 @@
 import React from "react";
 import styled from 'styled-components'
 
-const logo =  require("../assets/Logo.png")
+import logo from '../assets/Logo.png'
 
 export const HeaderComponent = styled.header`
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   display: flex;
   background-color: #081B1F;
   z-index: 50;
@@ -15,7 +15,7 @@ export const LogoComponent = styled.img`
   width: auto;
   height: 4vh;
   margin-top: 1.5em;
-  margin-left: 15em;
+  margin-left: 21.8em;
 `
 
 const Header = () => {

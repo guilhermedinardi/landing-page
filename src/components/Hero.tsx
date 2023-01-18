@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Form from './Form'
-import background from '../assets/forma1.png'
+import background from '../assets/background.png'
 
 export const Main = styled.main`
   background-image: url(${background});
@@ -11,12 +11,15 @@ export const Main = styled.main`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  height: 80vh;
 `
 
 export const Container = styled.div`
   width: 35em;
-  margin-left: 10em;
-  padding-top: 3.5em;
+  margin-left: 17em;
   padding-left: 4.5em;
 `
 
