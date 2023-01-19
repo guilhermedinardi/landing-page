@@ -4,6 +4,28 @@ import styled from 'styled-components'
 import Form from './Form'
 import background from '../assets/background.png'
 
+const Hero = () => {
+  return (
+    <Main>
+      <Container>
+        <Title>É tipo um banco,
+        só que <u>melhor.</u></Title>
+        <Paragraph>
+          Da estruturação dos seus objetivos de vida, até a materialização do seu plano financeiro.
+        </Paragraph> 
+        <br/>
+        <Paragraph>
+          Da alocação dos seus investimentos no Brasil e no exterior, até a proteção da sua vida e do seu patrimônio. 
+          Para a sua empresa e para a sua pessoa física.
+        </Paragraph>
+      </Container>
+      <Form />
+    </Main>
+  )
+}
+
+export default Hero
+
 export const Main = styled.main`
   background-image: url(${background});
   background-size: cover;
@@ -14,7 +36,7 @@ export const Main = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw;
-  height: 80vh;
+  height: 120vh;
 `
 
 export const Container = styled.div`
@@ -37,26 +59,3 @@ export const Paragraph = styled.p`
   font-weight: 300;
   padding-top: 1em;
 `
-
-
-const Hero = () => {
-  return (
-    <Main>
-      <Container>
-        <Title>É tipo um banco,
-        só que <u>melhor.</u></Title>
-        <Paragraph>
-          Da estruturação dos seus objetivos de vida, até a materialização do seu plano financeiro.
-        </Paragraph> 
-        <br/>
-        <Paragraph>
-          Da alocação dos seus investimentos no Brasil e no exterior, até a proteção da sua vida e do seu patrimônio. 
-          Para a sua empresa e para a sua pessoa física.
-        </Paragraph>
-      </Container>
-      <Form />
-    </Main>
-  )
-}
-
-export default Hero
