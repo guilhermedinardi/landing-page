@@ -7,7 +7,7 @@ import background from '../assets/background.png'
 const Hero = () => {
   return (
     <Main>
-      <Container>
+      <Container >
         <Title>É tipo um banco,
         só que <u>melhor.</u></Title>
         <Paragraph>
@@ -37,12 +37,26 @@ export const Main = styled.main`
   background-repeat: no-repeat;
   background-size: 100vw;
   height: 120vh;
+  
+  @media (max-width: 720px){
+    max-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: contain;
+  }
+
 `
 
 export const Container = styled.div`
   width: 35em;
   margin-left: 17em;
   padding-left: 4.5em;
+
+  @media (max-width: 720px){
+    width: 100vw;
+    padding: 0px 20px;
+  }
 `
 
 export const Title = styled.h1`
@@ -58,4 +72,10 @@ export const Paragraph = styled.p`
   line-height: 33px;
   font-weight: 300;
   padding-top: 1em;
+
+  @media (max-width: 720px){
+    font-size: 18px;
+    line-height: 23px;
+  }
+  
 `

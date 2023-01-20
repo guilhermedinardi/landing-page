@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form'
 import styled from 'styled-components'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-
+import Services from '../utils/Services'
 interface IFormData {
   name: string;
   email: string;
@@ -10,24 +10,47 @@ interface IFormData {
   privacyTerms: boolean;
 }
 
+
 const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().required(),
   phone: yup.number().positive().integer().required(),
   privacyTerms: yup.boolean().required(),
 }).required()
-
+console.log(schema)
 const Form = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormData>({
     resolver: yupResolver(schema)
   })
+  console.log({register})
   console.log(errors)
   const onSubmit = (data:IFormData) => {
     console.log(data)
-  };
+    try{
+      fetch('https://api.rd.services/platform/contacts', {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          cors: 'no-cors',
+          authorization: `Bearer ${process.env.AUTH_TOKEN}`
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone
+        })
+      })
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err))
+    }catch(err) {
+      console.log(err);
+    }
+  }
 
   return (
-    <FormContainer method="POST" action="/get_data">
+    <FormContainer>
       <FormLabel>
         <Input
           className={errors?.name && 'input-error'}
@@ -74,7 +97,7 @@ const Form = () => {
           )}
       </FormCheckbox>
       <FormLabel>
-        <Button onClick={() => handleSubmit(onSubmit)()}>Quero investir melhor</Button>
+        <Button>Quero investir melhor</Button>
       </FormLabel>
     </FormContainer>
   )
@@ -91,6 +114,16 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 2em;
+
+  @media (max-width: 720px){
+    max-width: 100vw;
+    height: 50em;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
 `
 export const FormLabel = styled.div`
   background-color: #F6F6F83B;

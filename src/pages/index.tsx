@@ -8,7 +8,7 @@ const LandingPage = () =>{
   return (
     <>
       <GlobalStyles />
-      <Header />
+      <Header  />
       <Hero />
       <Footer />
     </>
