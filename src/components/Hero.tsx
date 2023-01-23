@@ -35,15 +35,13 @@ export const Main = styled.main`
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100vw;
-  height: 120vh;
+  height: 100vh;
   
-  @media (max-width: 720px){
+  @media (max-width: 770px){
     max-width: 100vw;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-size: contain;
   }
 
 `
@@ -56,6 +54,12 @@ export const Container = styled.div`
   @media (max-width: 720px){
     width: 100vw;
     padding: 0px 20px;
+    margin: 0;
+  }
+
+  @media (min-width: 880px) and (max-width: 1440px){
+    padding-left: 2.5em;
+    margin-left: 10em;
   }
 `
 
@@ -64,6 +68,10 @@ export const Title = styled.h1`
   font-size: 55px;
   font-weight: 700;
   width: 9em;
+
+  @media (max-width: 770px){
+    font-size: 40px;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -73,7 +81,7 @@ export const Paragraph = styled.p`
   font-weight: 300;
   padding-top: 1em;
 
-  @media (max-width: 720px){
+  @media (max-width: 770px){
     font-size: 18px;
     line-height: 23px;
   }

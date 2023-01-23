@@ -18,8 +18,6 @@ export const HeaderComponent = styled.header`
   width: 100%;
   display: flex;
   background-color: #081B1F;
-  z-index: 50;  
-  position: fixed;
 `
 
 export const LogoComponent = styled.img`
@@ -27,4 +25,13 @@ export const LogoComponent = styled.img`
   height: 4vh;
   margin-top: 1.5em;
   margin-left: 21.7em;
+
+  @media(max-width: 770px){
+    margin-left: 50%;
+    margin-bottom: 1em;
+  }
+
+  @media (min-width: 880px) and (max-width: 1440px){
+    margin-left: 12.5em;
+  }
 `
