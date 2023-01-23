@@ -2,6 +2,7 @@ import {useForm} from 'react-hook-form'
 import styled from 'styled-components'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useNavigate } from 'react-router-dom'
 
 interface IFormData {
   name: string;
@@ -21,6 +22,8 @@ const Form = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<IFormData>({
     resolver: yupResolver(schema)
   })
+
+  const navigate = useNavigate();
 
   const onSubmit = (data:IFormData) => {
     const queryParameters = new URLSearchParams(window.location.search)
@@ -104,8 +107,8 @@ const Form = () => {
           )}
       </FormCheckbox>
       <FormLabel>
-        <Button type='submit'>
-          {isSubmitting && <span className="spin">Enviando</span>}
+        <Button type='submit' onClick={() => navigate("/obrigado")}>
+          {isSubmitting}
           Quero investir melhor
         </Button>
       </FormLabel>

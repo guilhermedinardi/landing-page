@@ -79,7 +79,7 @@ export const Paragraph = styled.p`
   font-size: 20px;
   line-height: 33px;
   font-weight: 300;
-  padding-top: 1em;
+  padding: 1em 0em;
 
   @media (max-width: 770px){
     font-size: 18px;
