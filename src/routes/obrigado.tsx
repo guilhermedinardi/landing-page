@@ -13,7 +13,7 @@ const Obrigado = () => {
       <Header />
       <Main>
         <Container>
-          <Title>Obrigado, em breve entraremos em contato</Title>
+          <Title>Obrigado! Em breve entraremos em contato.</Title>
         </Container>
       </Main>
       <Footer />
