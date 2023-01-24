@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useNavigate } from 'react-router-dom'
+// import { PatternFormat } from 'react-number-format'
+
 
 interface IFormData {
   name: string;
@@ -14,23 +16,26 @@ interface IFormData {
 const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().required(),
-  phone: yup.number().positive().integer().required(),
+  phone: yup.number().required(),
   privacyTerms: yup.boolean().required(),
 }).required()
 
 const Form = () => {
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<IFormData>({
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormData>({
     resolver: yupResolver(schema)
   })
 
   const navigate = useNavigate();
-
+  const queryParameters = new URLSearchParams(window.location.search)
   const onSubmit = (data:IFormData) => {
-    const queryParameters = new URLSearchParams(window.location.search)
+    navigate('/obrigado')
+
     const utm_medium = queryParameters.get("utm_medium")
     const utm_campaign = queryParameters.get("utm_campaign")
     const utm_source = queryParameters.get("utm_source")
     const utm_content = queryParameters.get("utm_content")
+    const number_to_string = String(data.phone)
+   
     const options = {
       method: 'POST',
       headers: {accept: 'application/json', 'Content-Type': 'application/json'},
@@ -41,7 +46,7 @@ const Form = () => {
           conversion_identifier: 'lp-tipo-um-banco',
           name: data.name,
           email: data.email,
-          phone: data.phone,
+          personal_phone: number_to_string,
           traffic_medium: utm_medium,
           traffic_source: utm_source,
           traffic_campaign: utm_campaign,
@@ -84,15 +89,15 @@ const Form = () => {
           )}
       </FormLabel>
       <FormLabel>
-        <Input
+        <Input 
           className={errors?.name && 'input-error'}
-          type='text'
+          type='tel'
           placeholder='Telefone' 
           {...register('phone', {required: true})}
         />
           {errors?.phone?.type === 'required' && (
             <Span className='error-message'>Telefone é obrigratório</Span>
-          )}
+            )}
       </FormLabel>
       <FormCheckbox>
         <Input
@@ -107,8 +112,7 @@ const Form = () => {
           )}
       </FormCheckbox>
       <FormLabel>
-        <Button type='submit' onClick={() => navigate("/obrigado")}>
-          {isSubmitting}
+        <Button type='submit'>
           Quero investir melhor
         </Button>
       </FormLabel>
@@ -181,6 +185,30 @@ export const Input = styled.input`
   }
 }
 `
+export const MaskInput = styled.input`
+  width: 25.7vw;
+  height: 6vh;
+  transition: background-color 0.2s ease 0s;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  line-height: 19px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  background: rgba(246, 246, 248, 0.23);
+  ::placeholder{
+    color: #fff;
+    opacity: 0.66;
+  }
+  .input-error{
+    outline: 1px solid rgb(255, 72, 72);
+  }
+  @media(max-width: 720px){
+    width: 20em;
+    height: 7vh;
+  }
+`
 export const FormCheckbox = styled.div`
   padding-left: 6em;
   display: flex;
@@ -190,11 +218,6 @@ export const FormCheckbox = styled.div`
     width: 1em;
     background: rgba(246, 246, 248, 0.23);
   }
-
-  @media(max-width: 720px){
-
-  }
-  
 `
 export const Span = styled.span`
   color: rgb(255, 72, 72);

@@ -1,7 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { GlobalStyles } from './styles/globalStyles';
-import LandingPage from './pages';
+import LandingPage from './routes';
+import Obrigado from './routes/obrigado';
 
 function App() {
   return (

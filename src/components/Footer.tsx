@@ -55,7 +55,7 @@ export const Copyright = styled.div`
   margin-top: -2em;
   span{
     font: normal normal 600 14px Montserrat;
-    padding-right: 21em;
+    padding-right: 12em;
     @media (max-width: 770px){
       padding-right: 3em;
       margin-top: 2em;

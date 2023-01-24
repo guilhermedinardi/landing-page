@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import Form from './Form'
@@ -7,7 +6,7 @@ import background from '../assets/background.png'
 const Hero = () => {
   return (
     <Main>
-      <Container >
+      <Container>
         <Title>É tipo um banco,
         só que <u>melhor.</u></Title>
         <Paragraph>
