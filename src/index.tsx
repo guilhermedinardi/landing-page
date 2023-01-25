@@ -6,7 +6,7 @@ import Obrigado from './routes/obrigado';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/tipo-um-banco',
     element: <LandingPage />,
   }, 
   {
