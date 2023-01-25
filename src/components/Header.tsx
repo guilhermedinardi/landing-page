@@ -17,7 +17,7 @@ export default Header
 export const HeaderComponent = styled.header`
   width: 100%;
   display: flex;
-  background-color: #081B1F;
+  background-color: #000;
 `
 
 export const LogoComponent = styled.img`

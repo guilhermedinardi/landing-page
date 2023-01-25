@@ -27,7 +27,7 @@ const Footer = () => {
 export default Footer
 
 export const FooterComponent = styled.footer`
-  background-color: var(--primary-color);
+  background-color: #000;
   display: flex;
   flex-direction: column;
   color: var(--text-color);

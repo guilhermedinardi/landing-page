@@ -44,7 +44,6 @@ export const Main = styled.main`
   }
 
 `
-
 export const Container = styled.div`
   width: 35em;
   margin-left: 17em;
@@ -85,4 +84,15 @@ export const Paragraph = styled.p`
     line-height: 23px;
   }
   
+`
+export const Ball = styled.div`
+top: 484px;
+left: 1397px;
+width: 693px;
+height: 715px;
+transform: matrix(-0.88, 0.47, -0.47, -0.88, 0, 0);
+/* UI Properties */
+background: transparent url('../assets/forma2.png') 0% 0% no-repeat padding-box;
+opacity: 0.5;
+
 `
