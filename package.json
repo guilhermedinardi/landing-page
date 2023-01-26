@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "terser-brunch": "^4.1.0",
     "webpack-bundle-analyzer": "^4.7.0"
   }
 }

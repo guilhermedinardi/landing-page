@@ -24,16 +24,15 @@ const Form = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormData>({
     resolver: yupResolver(schema)
   })
-
+  const queryParameters = new URLSearchParams(window.location.search.toString())
+  const utmMedium = queryParameters.get("utm_medium")
+  const utmCampaign = queryParameters.get("utm_campaign")
+  const utmSource = queryParameters.get("utm_source")
+  const utmContent = queryParameters.get("utm_content")
   const navigate = useNavigate();
-  const queryParameters = new URLSearchParams(window.location.search)
+
   const onSubmit = (data:IFormData) => {
     navigate('/obrigado')
-
-    const utm_medium = queryParameters.get("utm_medium")
-    const utm_campaign = queryParameters.get("utm_campaign")
-    const utm_source = queryParameters.get("utm_source")
-    const utm_content = queryParameters.get("utm_content")
     const number_to_string = String(data.phone)
    
     const options = {
@@ -47,10 +46,10 @@ const Form = () => {
           name: data.name,
           email: data.email,
           personal_phone: number_to_string,
-          traffic_medium: utm_medium,
-          traffic_source: utm_source,
-          traffic_campaign: utm_campaign,
-          traffic_value: utm_content
+          traffic_medium: utmMedium,
+          traffic_source: utmSource,
+          traffic_campaign: utmCampaign,
+          traffic_value: utmContent
         }
       })
     };
