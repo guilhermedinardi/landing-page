@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{ Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './routes';
 import Obrigado from './routes/obrigado';
+
+console.log('Webpack Zero Config Works!');
 
 const router = createBrowserRouter([
   {
@@ -15,12 +17,12 @@ const router = createBrowserRouter([
   }
 ])
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <Suspense fallback={ <div>Carregando...</div> }>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Suspense>
 );
-
